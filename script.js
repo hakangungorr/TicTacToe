@@ -79,6 +79,8 @@ if (count === 9){
 let result= document.querySelector(".js-result")
 result.innerText = "ITS DRAW"
 
+
+
 }
 });
 }
