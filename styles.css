@@ -72,7 +72,7 @@ h1 {
 .player-container{
   display: flex;
   height: 200px;
-  width: 120px;
+  width: 100%;
   margin-left: 20rem;
   margin-right: 20rem;
   flex-direction: column;
@@ -109,3 +109,12 @@ font-size: 16px;
   gap: 10rem;
 }
 
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .main-container, .player-container {
+    width: 100%;
+    margin-left: 1rem; /* Gerekirse ayarlayın */
+    margin-right: 1rem; /* Gerekirse ayarlayın */
+    flex-wrap: wrap;  
+    }
+}

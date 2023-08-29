@@ -3,7 +3,7 @@ let resetButton = document.querySelector(".btn-reset")
 let turnButton = document.querySelector(".btn-turn");
 let result= document.querySelector(".js-result")
 let winX = document.querySelector(".count-X")
-let winY = document.querySelector(".count-Y")
+let winO = document.querySelector(".count-O")
 let winningPattern = [
   [0, 1, 2],
   [0, 3, 6],
@@ -18,7 +18,7 @@ let winningPattern = [
 xTurn=true;  //identify turning pattern 
 count= 0
 countwinX=0
-countwinY=0
+countwinO=0
 let xResult = []
 let oResult = []
 
@@ -47,9 +47,9 @@ function checkWinner(){
   }else if(xTurn===true){
     winningPattern.forEach((element)=>{
       if(element.every(item =>oResult.includes(item))){
-        countwinY ++
-        winY.innerText= `${countwinY}`
-        result.innerText= 'Player Y won'
+        countwinO ++
+        winO.innerText= `${countwinO}`
+        result.innerText= 'Player O won'
 
         disableButton();
          
@@ -104,13 +104,13 @@ console.log(result)
       oResult = []
       count=0
       countwinX=0
-      countwinY=0
+      countwinO=0
       xTurn=true;
       element.innerText= '';
       element.disabled= false;
       result.innerText = '';
       winX.innerText='';
-      winY.innerText='';
+      winO.innerText='';
   })})
   
   turnButton.addEventListener("click", ()=>{
