@@ -1,6 +1,9 @@
 let chosenButton = document.querySelectorAll(".btn-option")
 let resetButton = document.querySelector(".btn-reset")
+let turnButton = document.querySelector(".btn-turn");
 let result= document.querySelector(".js-result")
+let winX = document.querySelector(".count-X")
+let winY = document.querySelector(".count-Y")
 let winningPattern = [
   [0, 1, 2],
   [0, 3, 6],
@@ -14,6 +17,8 @@ let winningPattern = [
 
 xTurn=true;  //identify turning pattern 
 count= 0
+countwinX=0
+countwinY=0
 let xResult = []
 let oResult = []
 
@@ -28,7 +33,9 @@ function checkWinner(){
   if(xTurn===false){
     winningPattern.forEach((element)=>{
       if(element.every(item =>xResult.includes(item))){
-        console.log('winning')
+        countwinX ++
+        winX.innerText= `${countwinX}`
+        result.innerText= 'Player X won'
         disableButton();
          
           
@@ -40,7 +47,10 @@ function checkWinner(){
   }else if(xTurn===true){
     winningPattern.forEach((element)=>{
       if(element.every(item =>oResult.includes(item))){
-        console.log('winning')
+        countwinY ++
+        winY.innerText= `${countwinY}`
+        result.innerText= 'Player Y won'
+
         disableButton();
          
         
@@ -75,7 +85,7 @@ chosenButton.forEach((element,index)=>{
 checkWinner();
 count ++
 
-if (count === 9){
+if (count === 9 && winY.innerText === '' & winX.innerText===''){
 result.innerText = "Draw"
 console.log(result)
 
@@ -92,14 +102,26 @@ console.log(result)
     chosenButton.forEach((element)=>{
       xResult = []
       oResult = []
+      count=0
+      countwinX=0
+      countwinY=0
+      xTurn=true;
       element.innerText= '';
       element.disabled= false;
-      count=0
-      xTurn=true;
       result.innerText = '';
+      winX.innerText='';
+      winY.innerText='';
   })})
   
-  
+  turnButton.addEventListener("click", ()=>{
+    chosenButton.forEach((element)=>{
+      xResult = []
+      oResult = []
+      count=0
+      xTurn=true;
+      element.innerText= '';
+      element.disabled= false;
+    })})
     
 
 

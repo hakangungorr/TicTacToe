@@ -30,7 +30,7 @@ h1 {
 }
 
 
-.btn-option:hover, .btn-reset:hover{  
+.btn-option:hover, .btn-reset:hover, .btn-turn:hover{  
   background-color: #b3b3b3 ;
 
 }
