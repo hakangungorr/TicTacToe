@@ -85,7 +85,7 @@ chosenButton.forEach((element,index)=>{
 checkWinner();
 count ++
 
-if (count === 9 && winY.innerText === '' & winX.innerText===''){
+if (count === 9 && result.innerText===''){
 result.innerText = "Draw"
 console.log(result)
 
@@ -119,8 +119,9 @@ console.log(result)
       oResult = []
       count=0
       xTurn=true;
-      element.innerText= '';
-      element.disabled= false;
+      element.innerText='';
+      element.disabled = false;
+      result.innerText = '';
     })})
     
 
