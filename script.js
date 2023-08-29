@@ -1,6 +1,6 @@
 let chosenButton = document.querySelectorAll(".btn-option")
-let restartButton = document.querySelector(".btn-reset")
-
+let resetButton = document.querySelector(".btn-reset")
+let result= document.querySelector(".js-result")
 let winningPattern = [
   [0, 1, 2],
   [0, 3, 6],
@@ -76,15 +76,31 @@ checkWinner();
 count ++
 
 if (count === 9){
-let result= document.querySelector(".js-result")
-result.innerText = "ITS DRAW"
+result.innerText = "Draw"
+console.log(result)
 
 
 
 }
-});
+}
+);
 }
 )
+
+
+  resetButton.addEventListener("click", ()=>{
+    chosenButton.forEach((element)=>{
+      xResult = []
+      oResult = []
+      element.innerText= '';
+      element.disabled= false;
+      count=0
+      xTurn=true;
+      result.innerText = '';
+  })})
+  
+  
+    
 
 
 
