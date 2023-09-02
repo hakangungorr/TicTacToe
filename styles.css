@@ -118,3 +118,13 @@ font-size: 16px;
     flex-wrap: wrap;  
     }
 }
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .main-container, .player-container {
+    width: 100%;
+    margin-left: 1rem; /* Gerekirse ayarlayın */
+    margin-right: 1rem; /* Gerekirse ayarlayın */
+    flex-wrap: wrap;  
+    }
+}
